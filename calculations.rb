@@ -18,16 +18,16 @@ end
 
 def self.receipt_calc
   if @imported == 'y' && @exempt == 'y'
-    imported = Imported.new(@name, @price, @quantity, @tax = 1.05 )
+    imported = Imported.new(@name, @price, @quantity, @tax = 1.05)
     @products << imported
   elsif @imported == 'y' && @exempt == 'n'
-    exempt = Exempt.new(@name, @price, @quantity, @tax = 1.15 )
+    exempt = Exempt.new(@name, @price, @quantity, @tax = 1.15)
     @products << exempt
   elsif @imported == 'n' && @exempt == 'n'
-    product = Product.new(@name, @price, @quantity, @tax = 1.10, @total )
+    product = Product.new(@name, @price, @quantity, @tax = 1.10, @total)
     @products << product
   else
-    product = Product.new(@name, @price, @quantity, @tax = 1, @total )
-    # @products << product
+    product = Product.new(@name, @price, @quantity, @tax = 1, @total)
+    @products << product
   end
 end
