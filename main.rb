@@ -31,8 +31,7 @@ def main
 end
 
 def receipt
-  puts 'RECEIPT:'
-  puts @products
+  puts '#########     RECEIPT     #########:'
   @products.each do |product|
     puts "#{product.quantity} #{product.name}: #{product.total_product}"
   end
